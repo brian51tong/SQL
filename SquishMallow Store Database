@@ -1,0 +1,19 @@
+--creating a stuffed animal database
+--creating the name of the store followed by the id that is unique to each animal and storing properties about each animal
+
+CREATE TABLE SquishMallow_Store (id INTEGER PRIMARY KEY,Animal TEXT, Quantity INTEGER, Price INTEGER, Rating INTEGER, Size Text);
+
+INSERT INTO SquishMallow_Store VALUES (1, "Duck", 50, 10, 2.5, "Small");
+INSERT INTO SquishMallow_Store VALUES(2, "Cat", 100, 10, 2, "Small"); 
+INSERT INTO SquishMallow_Store VALUES (3, "Dragon", 75, 20, 4, "Medium");
+INSERT INTO SquishMallow_Store VALUES(4,"Rino", 100, 20, 4, "Medium");
+INSERT INTO SquishMallow_Store VALUES(5,"Polar Bear" , 100, 30, 5, "Large");
+INSERT INTO SquishMallow_Store VALUES( 6, "Raccoon", 75, 20, 5, "Medium");
+INSERT INTO SquishMallow_Store VALUES(7, "Bear", 90, 20, 3.5, "Medium");
+INSERT INTO SquishMallow_Store VALUES(8, "Zebra", 25, 30, 4.5, "Large");
+INSERT INTO SquishMallow_Store VALUES(9, "Dog", 100, 20, 5, "Medium");
+INSERT INTO SquishMallow_Store VALUES(10, "Baby Deer", 35, 10, 3.7, "Small");
+
+--Selecting all the data in the database and ordering them by the price 
+Select * From SquishMallow_Store
+ORDER By price;
