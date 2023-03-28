@@ -99,3 +99,21 @@ FROM BIT_DB.JanSales
 GROUP BY product
 ORDER BY sum(quantity*price) desc 
 LIMIT 1
+========================================
+with avg_pop AS(
+
+Select 
+avg(spot.popularity) as avg_pop, spot.artist_name
+
+From Spotifydata as spot
+Group by spot.artist_name 
+)
+
+Select avg_pop, artist_name,
+'Top star' as tag 
+from avg_pop
+where avg_pop > 90 
+order by avg_pop desc;
+==============================
+
+
