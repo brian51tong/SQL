@@ -100,6 +100,8 @@ GROUP BY product
 ORDER BY sum(quantity*price) desc 
 LIMIT 1
 ========================================
+CTEs
+
 with avg_pop AS(
 
 Select 
@@ -115,5 +117,13 @@ from avg_pop
 where avg_pop > 90 
 order by avg_pop desc;
 ==============================
+Creating a windows function practice
 
+SELECT street, safetyrating,
+AVG(safetyrating) OVER (PARTITION BY street) as "Average_safety_rating",
+CASE WHEN AVG(safetyrating) OVER (PARTITION BY street) >=4 THEN "Leave As-Is"
+    WHEN AVG(safetyrating) OVER (PARTITION BY street) <2.5 THEN "Remove"
+    ELSE "Improvements Needed"
+    END AS "Recommendation"
+FROM CityBikeLanes
 
